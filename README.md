@@ -6,7 +6,7 @@ Load the 2 needed packages plyr and dplyr
 library(plyr)
 library(dplyr)
 ```
-Read teh features.txt into R which will be used to label our dataframes
+Read the features.txt into R which will be used to label our dataframes
 ```{r}
 d_features= read.table("./getting_and_cleaning/features.txt")
 ```
@@ -18,7 +18,7 @@ names(d_train_x) <- d_features$V2
 d_test_x = read.table("./getting_and_cleaning/test/X_test.txt")
 names(d_test_x) <- d_features$V2
 ```
-Rowbind the train and test Dataframe in to one big Dataframe with 10299 obs. of 561 variables
+Rowbind the train and test dataframe in to one big Dataframe with 10299 obs. of 561 variables
 ```{r}
 joined <- rbind(d_test_x, d_train_x)
 ```
