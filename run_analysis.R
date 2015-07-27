@@ -2,22 +2,22 @@
 library(plyr)
 library(dplyr)
 
-d_features= read.table("./getting_and_cleaning/features.txt")
-d_train_x = read.table("./getting_and_cleaning/train/X_train.txt")
+d_features= read.table("./features.txt")
+d_train_x = read.table("./train/X_train.txt")
 names(d_train_x) <- d_features$V2
-d_test_x = read.table("./getting_and_cleaning/test/X_test.txt")
+d_test_x = read.table("./test/X_test.txt")
 names(d_test_x) <- d_features$V2
 joined <- rbind(d_test_x, d_train_x)
 
 
-d_train_y <-read.table("./getting_and_cleaning/train/Y_train.txt")
-d_test_y <-read.table("./getting_and_cleaning/test/Y_test.txt")
+d_train_y <-read.table("./train/Y_train.txt")
+d_test_y <-read.table("./test/Y_test.txt")
 
 y_joined <- rbind(d_test_y, d_train_y)
 colnames(y_joined) <- "Activity"
 
-d_train_sub <-read.table("./getting_and_cleaning/train/subject_train.txt")
-d_test_sub <-read.table("./getting_and_cleaning/test/subject_test.txt")
+d_train_sub <-read.table("./train/subject_train.txt")
+d_test_sub <-read.table("./test/subject_test.txt")
 
 sub_joined <- rbind(d_test_sub, d_train_sub)
 colnames(sub_joined) <- "Subject"
